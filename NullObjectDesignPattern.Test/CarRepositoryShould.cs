@@ -1,4 +1,5 @@
 using FluentAssertions;
+using NullObjectDesignPattern.Console;
 
 namespace NullObjectDesignPattern.Test
 {
@@ -40,22 +41,6 @@ namespace NullObjectDesignPattern.Test
             var expectedResult = "Hello Volvo!";
 
             result.Should().Be(expectedResult);
-        }
-    }
-
-    public class CarRepository
-    {
-        public static string GetCarByName(string carName)
-        {
-            if (carName == "Seat")
-            {
-                return "Hello Seat!";
-            }
-            if (carName == "Volvo")
-            {
-                return "Hello Volvo!";
-            }
-            return "Hello Audi!";
         }
     }
 }
