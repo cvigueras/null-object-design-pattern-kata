@@ -60,5 +60,14 @@ namespace NullObjectDesignPattern.Test
             var expectedResult = "Audi Started!!";
             result.Should().Be(expectedResult);
         }
+
+        [Test]
+        public void PrintVolvoStartedWhenVolvoStarts()
+        {
+            var carname = "Volvo";
+            var result = CarRepository.StartCar(carname);
+            var expectedResult = "Volvo Started!!";
+            result.Should().Be(expectedResult);
+        }
     }
 }
