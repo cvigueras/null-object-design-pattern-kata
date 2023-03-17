@@ -20,4 +20,9 @@ public class CarRepository
 
         return "Audi Started!!";
     }
+
+    public static object StopCar(string carname)
+    {
+        return "Seat Stopped!!";
+    }
 }

@@ -69,5 +69,14 @@ namespace NullObjectDesignPattern.Test
             var expectedResult = "Volvo Started!!";
             result.Should().Be(expectedResult);
         }
+
+        [Test]
+        public void PrintSeatStoppedWhenSeatStops()
+        {
+            var carname = "Seat";
+            var result = CarRepository.StopCar(carname);
+            var expectedResult = "Seat Stopped!!";
+            result.Should().Be(expectedResult);
+        }
     }
 }
