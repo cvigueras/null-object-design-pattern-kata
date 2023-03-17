@@ -27,6 +27,10 @@ public class CarRepository
         {
             return "Seat Stopped!!";
         }
+        if (carname == "Volvo")
+        {
+            return "Volvo Stopped!!";
+        }
 
         return "Audi Stopped!!";
     }
