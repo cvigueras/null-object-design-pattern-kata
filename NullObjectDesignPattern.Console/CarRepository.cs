@@ -6,4 +6,9 @@ public class CarRepository
     {
         return carName == "Seat" ? "Hello Seat!" : carName == "Volvo" ? "Hello Volvo!" : "Hello Audi!";
     }
+
+    public static object StartCar(object carname)
+    {
+        return "Seat Started!!";
+    }
 }
