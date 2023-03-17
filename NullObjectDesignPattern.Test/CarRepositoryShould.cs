@@ -78,5 +78,14 @@ namespace NullObjectDesignPattern.Test
             var expectedResult = "Seat Stopped!!";
             result.Should().Be(expectedResult);
         }
+
+        [Test]
+        public void PrintAudiStoppedWhenAudiStops()
+        {
+            var carname = "Audi";
+            var result = CarRepository.StopCar(carname);
+            var expectedResult = "Audi Stopped!!";
+            result.Should().Be(expectedResult);
+        }
     }
 }

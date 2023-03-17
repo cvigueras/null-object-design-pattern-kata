@@ -23,6 +23,11 @@ public class CarRepository
 
     public static object StopCar(string carname)
     {
-        return "Seat Stopped!!";
+        if (carname == "Seat")
+        {
+            return "Seat Stopped!!";
+        }
+
+        return "Audi Stopped!!";
     }
 }
