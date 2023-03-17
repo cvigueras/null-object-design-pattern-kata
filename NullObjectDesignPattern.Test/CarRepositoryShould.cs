@@ -12,9 +12,21 @@ namespace NullObjectDesignPattern.Test
         [Test]
         public void PrintHelloSeatWhenNameIsSeat()
         {
-            var result = CarRepository.GetCarByName();
+            var carName = "Seat";
+            var result = CarRepository.GetCarByName(carName);
 
             var expectedResult = "Hello Seat!";
+
+            result.Should().Be(expectedResult);
+        }
+
+        [Test]
+        public void PrintHelloAudiWhenNameIsAudi()
+        {
+            var carName = "Audi";
+            var result = CarRepository.GetCarByName(carName);
+
+            var expectedResult = "Hello Audi!";
 
             result.Should().Be(expectedResult);
         }
@@ -22,9 +34,13 @@ namespace NullObjectDesignPattern.Test
 
     public class CarRepository
     {
-        public static string GetCarByName()
+        public static string GetCarByName(string carName)
         {
-            return "Hello Seat!";
+            if (carName == "Seat")
+            {
+                return "Hello Seat!";
+            }
+            return "Hello Audi!";
         }
     }
 }
