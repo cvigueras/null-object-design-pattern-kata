@@ -30,6 +30,17 @@ namespace NullObjectDesignPattern.Test
 
             result.Should().Be(expectedResult);
         }
+
+        [Test]
+        public void PrintHelloVolvoWhenNameIsVolvo()
+        {
+            var carName = "Volvo";
+            var result = CarRepository.GetCarByName(carName);
+
+            var expectedResult = "Hello Volvo!";
+
+            result.Should().Be(expectedResult);
+        }
     }
 
     public class CarRepository
@@ -39,6 +50,10 @@ namespace NullObjectDesignPattern.Test
             if (carName == "Seat")
             {
                 return "Hello Seat!";
+            }
+            if (carName == "Volvo")
+            {
+                return "Hello Volvo!";
             }
             return "Hello Audi!";
         }
