@@ -4,34 +4,31 @@ public class CarRepository
 {
     public static string GetCarByName(string carName)
     {
-        return carName == "Seat" ? "Hello Seat!" : carName == "Volvo" ? "Hello Volvo!" : "Hello Audi!";
+        return carName switch
+        {
+            "Seat" => "Hello Seat!",
+            "Volvo" => "Hello Volvo!",
+            _ => "Hello Audi!"
+        };
     }
 
     public static object StartCar(object carName)
     {
-        if (carName == "Seat")
+        return carName switch
         {
-            return "Seat Started!!";
-        }
-        if (carName == "Volvo")
-        {
-            return "Volvo Started!!";
-        }
-
-        return "Audi Started!!";
+            "Seat" => "Seat Started!!",
+            "Volvo" => "Volvo Started!!",
+            _ => "Audi Started!!"
+        };
     }
 
     public static object StopCar(string carname)
     {
-        if (carname == "Seat")
+        return carname switch
         {
-            return "Seat Stopped!!";
-        }
-        if (carname == "Volvo")
-        {
-            return "Volvo Stopped!!";
-        }
-
-        return "Audi Stopped!!";
+            "Seat" => "Seat Stopped!!",
+            "Volvo" => "Volvo Stopped!!",
+            _ => "Audi Stopped!!"
+        };
     }
 }
