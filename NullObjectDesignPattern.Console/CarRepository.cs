@@ -2,7 +2,7 @@ namespace NullObjectDesignPattern.Console;
 
 public class CarRepository
 {
-    public static string GetCarByName(string carName)
+    public static string SayHello(string carName)
     {
         return carName switch
         {
@@ -22,13 +22,26 @@ public class CarRepository
         };
     }
 
-    public static object StopCar(string carname)
+    public static object StopCar(string carName)
     {
-        return carname switch
+        return carName switch
         {
             "Seat" => "Seat Stopped!!",
             "Volvo" => "Volvo Stopped!!",
             _ => "Audi Stopped!!"
         };
+    }
+
+    public static ICar GetCar(string carName)
+    {
+        ICar car = null;
+        switch (carName)
+        {
+            case "Seat":
+                car = new Seat();
+                break;
+        }
+
+        return car;
     }
 }
