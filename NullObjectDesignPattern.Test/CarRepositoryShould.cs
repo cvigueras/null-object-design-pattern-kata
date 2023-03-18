@@ -93,9 +93,10 @@ namespace NullObjectDesignPattern.Test
         [Test]
         public void PrintAudiStoppedWhenAudiStops()
         {
-            var result = CarRepository.StopCar(MarkAudi);
-
             var expectedResult = "Audi Stopped!!";
+
+            _car = CarRepository.GetCar(MarkAudi);
+            var result = _car.StopCar();
 
             result.Should().Be(expectedResult);
         }
