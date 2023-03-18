@@ -44,34 +44,34 @@ namespace NullObjectDesignPattern.Test
             result.Should().Be(expectedResult);
         }
 
-        [Test]
-        public void ReturnStringEmptyInSayHelloWhenCarIsNull()
+        [TestCase(null, "")]
+        [TestCase("", "")]
+        [TestCase("Skoda", "")]
+        public void ReturnStringEmptyInSayHelloWhenCarIsNullOrEmptyOrNotExist(string input, string expectedResult)
         {
-            var expectedResult = "";
-
-            _car = CarRepository.GetCar(null);
+            _car = CarRepository.GetCar(input);
             var result = _car.SayHello();
 
             result.Should().Be(expectedResult);
         }
 
-        [Test]
-        public void ReturnStringEmptyInStartCarWhenCarIsNull()
+        [TestCase(null, "")]
+        [TestCase("", "")]
+        [TestCase("Skoda", "")]
+        public void ReturnStringEmptyInStartCarWhenCarIsNullOrEmptyOrNotExist(string input, string expectedResult)
         {
-            var expectedResult = "";
-
-            _car = CarRepository.GetCar(null);
+            _car = CarRepository.GetCar(input);
             var result = _car.StartCar();
 
             result.Should().Be(expectedResult);
         }
 
-        [Test]
-        public void ReturnStringEmptyInStopCarWhenCarIsNull()
+        [TestCase(null, "")]
+        [TestCase("", "")]
+        [TestCase("Skoda", "")]
+        public void ReturnStringEmptyInStopCarWhenCarIsNullOrEmptyOrNotExist(string input, string expectedResult)
         {
-            var expectedResult = "";
-
-            _car = CarRepository.GetCar(null);
+            _car = CarRepository.GetCar(input);
             var result = _car.StopCar();
 
             result.Should().Be(expectedResult);
