@@ -11,102 +11,34 @@ namespace NullObjectDesignPattern.Test
         private const string MarkVolvo = "Volvo";
 
 
-        [Test]
-        public void PrintHelloSeatWhenNameIsSeat()
+        [TestCase(MarkSeat, "Hello Seat!!")]
+        [TestCase(MarkAudi, "Hello Audi!!")]
+        [TestCase(MarkVolvo, "Hello Volvo!!")]
+        public void PrintHelloCarWhenGetCar(string input, string expectedResult)
         {
-            var expectedResult = "Hello Seat!!";
-
-            _car = CarRepository.GetCar(MarkSeat);
+            _car = CarRepository.GetCar(input);
             var result = _car.SayHello();
 
             result.Should().Be(expectedResult);
         }
 
-        [Test]
-        public void PrintHelloAudiWhenNameIsAudi()
+        [TestCase(MarkSeat, "Seat Started!!")]
+        [TestCase(MarkAudi, "Audi Started!!")]
+        [TestCase(MarkVolvo, "Volvo Started!!")]
+        public void PrintCarStartedWhenStartCar(string input, string expectedResult)
         {
-            var expectedResult = "Hello Audi!!";
-
-            _car = CarRepository.GetCar(MarkAudi);
-            var result = _car.SayHello();
-
-
-            result.Should().Be(expectedResult);
-        }
-
-        [Test]
-        public void PrintHelloVolvoWhenNameIsVolvo()
-        {
-            var expectedResult = "Hello Volvo!!";
-
-            _car = CarRepository.GetCar(MarkVolvo);
-            var result = _car.SayHello();
-
-
-            result.Should().Be(expectedResult);
-        }
-
-        [Test]
-        public void PrintSeatStartedWhenSeatStarts()
-        {
-            var expectedResult = "Seat Started!!";
-
-            _car = CarRepository.GetCar(MarkSeat);
+            _car = CarRepository.GetCar(input);
             var result = _car.StartCar();
 
             result.Should().Be(expectedResult);
         }
 
-        [Test]
-        public void PrintAudiStartedWhenAudiStarts()
+        [TestCase(MarkSeat, "Seat Stopped!!")]
+        [TestCase(MarkAudi, "Audi Stopped!!")]
+        [TestCase(MarkVolvo, "Volvo Stopped!!")]
+        public void PrintCarStoppedWhenStopCar(string input, string expectedResult)
         {
-            var expectedResult = "Audi Started!!";
-
-            _car = CarRepository.GetCar(MarkAudi);
-            var result = _car.StartCar();
-
-            result.Should().Be(expectedResult);
-        }
-
-        [Test]
-        public void PrintVolvoStartedWhenVolvoStarts()
-        {
-            var expectedResult = "Volvo Started!!";
-
-            _car = CarRepository.GetCar(MarkVolvo);
-            var result = _car.StartCar();
-
-            result.Should().Be(expectedResult);
-        }
-
-        [Test]
-        public void PrintSeatStoppedWhenSeatStops()
-        {
-            var expectedResult = "Seat Stopped!!";
-
-            _car = CarRepository.GetCar(MarkSeat);
-            var result = _car.StopCar();
-
-            result.Should().Be(expectedResult);
-        }
-
-        [Test]
-        public void PrintAudiStoppedWhenAudiStops()
-        {
-            var expectedResult = "Audi Stopped!!";
-
-            _car = CarRepository.GetCar(MarkAudi);
-            var result = _car.StopCar();
-
-            result.Should().Be(expectedResult);
-        }
-
-        [Test]
-        public void PrintVolvoStoppedWhenVolvoStops()
-        {
-            var expectedResult = "Volvo Stopped!!";
-
-            _car = CarRepository.GetCar(MarkVolvo);
+            _car = CarRepository.GetCar(input);
             var result = _car.StopCar();
 
             result.Should().Be(expectedResult);

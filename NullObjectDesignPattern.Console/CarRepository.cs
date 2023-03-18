@@ -2,31 +2,19 @@ namespace NullObjectDesignPattern.Console;
 
 public class CarRepository
 {
-    public static object StopCar(string carName)
-    {
-        return carName switch
-        {
-            "Seat" => "Seat Stopped!!",
-            "Volvo" => "Volvo Stopped!!",
-            _ => "Audi Stopped!!"
-        };
-    }
+    private const string Seat = "Seat";
+    private const string Audi = "Audi";
+    private const string Volvo = "Volvo";
 
     public static ICar GetCar(string carName)
     {
-        ICar car = null;
-        switch (carName)
+        ICar car = carName switch
         {
-            case "Seat":
-                car = new Seat();
-                break;
-            case "Audi":
-                car = new Audi();
-                break;
-            case "Volvo":
-                car = new Volvo();
-                break;
-        }
+            Seat => new Seat(),
+            Audi => new Audi(),
+            Volvo => new Volvo(),
+            _ => null
+        };
 
         return car;
     }
