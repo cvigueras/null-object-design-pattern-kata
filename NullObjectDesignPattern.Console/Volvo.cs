@@ -1,14 +1,14 @@
 namespace NullObjectDesignPattern.Console;
 
-public class Seat : ICar
+public class Volvo : ICar
 {
     public string SayHello()
     {
-        return "Hello Seat!!";
+        return "Hello Volvo!!";
     }
 
     public string StartCar()
     {
-        return "Seat Started!!";
+        throw new NotImplementedException();
     }
 }
