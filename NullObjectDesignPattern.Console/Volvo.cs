@@ -14,6 +14,6 @@ public class Volvo : ICar
 
     public string StopCar()
     {
-        throw new NotImplementedException();
+        return "Volvo Stopped!!";
     }
 }
