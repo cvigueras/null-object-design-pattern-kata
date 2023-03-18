@@ -71,9 +71,10 @@ namespace NullObjectDesignPattern.Test
         [Test]
         public void PrintVolvoStartedWhenVolvoStarts()
         {
-            var result = CarRepository.StartCar(MarkVolvo);
-
             var expectedResult = "Volvo Started!!";
+
+            _car = CarRepository.GetCar(MarkVolvo);
+            var result = _car.StartCar();
 
             result.Should().Be(expectedResult);
         }
