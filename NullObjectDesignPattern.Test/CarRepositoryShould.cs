@@ -50,19 +50,20 @@ namespace NullObjectDesignPattern.Test
         public void PrintSeatStartedWhenSeatStarts()
         {
             var expectedResult = "Seat Started!!";
+
             _car = CarRepository.GetCar(MarkSeat);
-
-
             var result = _car.StartCar();
+
             result.Should().Be(expectedResult);
         }
 
         [Test]
         public void PrintAudiStartedWhenAudiStarts()
         {
-            var result = CarRepository.StartCar(MarkAudi);
-
             var expectedResult = "Audi Started!!";
+
+            _car = CarRepository.GetCar(MarkAudi);
+            var result = _car.StartCar();
 
             result.Should().Be(expectedResult);
         }
