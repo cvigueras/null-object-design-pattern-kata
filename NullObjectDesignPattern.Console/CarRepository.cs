@@ -40,6 +40,9 @@ public class CarRepository
             case "Seat":
                 car = new Seat();
                 break;
+            case "Audi":
+                car = new Audi();
+                break;
         }
 
         return car;

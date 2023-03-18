@@ -25,9 +25,11 @@ namespace NullObjectDesignPattern.Test
         [Test]
         public void PrintHelloAudiWhenNameIsAudi()
         {
-            var result = CarRepository.SayHello(MarkAudi);
+            var expectedResult = "Hello Audi!!";
 
-            var expectedResult = "Hello Audi!";
+            _car = CarRepository.GetCar(MarkAudi);
+            var result = _car.SayHello();
+
 
             result.Should().Be(expectedResult);
         }
