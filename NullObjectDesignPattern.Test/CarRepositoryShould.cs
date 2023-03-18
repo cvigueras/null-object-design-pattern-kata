@@ -82,9 +82,10 @@ namespace NullObjectDesignPattern.Test
         [Test]
         public void PrintSeatStoppedWhenSeatStops()
         {
-            var result = CarRepository.StopCar(MarkSeat);
-
             var expectedResult = "Seat Stopped!!";
+
+            _car = CarRepository.GetCar(MarkSeat);
+            var result = _car.StopCar();
 
             result.Should().Be(expectedResult);
         }

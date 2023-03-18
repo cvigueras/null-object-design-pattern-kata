@@ -11,4 +11,9 @@ public class Seat : ICar
     {
         return "Seat Started!!";
     }
+
+    public string StopCar()
+    {
+        return "Seat Stopped!!";
+    }
 }

@@ -2,16 +2,6 @@ namespace NullObjectDesignPattern.Console;
 
 public class CarRepository
 {
-    public static object StartCar(object carName)
-    {
-        return carName switch
-        {
-            "Seat" => "Seat Started!!",
-            "Volvo" => "Volvo Started!!",
-            _ => "Audi Started!!"
-        };
-    }
-
     public static object StopCar(string carName)
     {
         return carName switch

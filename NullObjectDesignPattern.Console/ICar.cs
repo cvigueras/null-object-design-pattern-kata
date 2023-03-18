@@ -4,4 +4,5 @@ public interface ICar
 {
     string SayHello();
     string StartCar();
+    string StopCar();
 }
