@@ -2,16 +2,6 @@ namespace NullObjectDesignPattern.Console;
 
 public class CarRepository
 {
-    public static string SayHello(string carName)
-    {
-        return carName switch
-        {
-            "Seat" => "Hello Seat!",
-            "Volvo" => "Hello Volvo!",
-            _ => "Hello Audi!"
-        };
-    }
-
     public static object StartCar(object carName)
     {
         return carName switch
@@ -42,6 +32,9 @@ public class CarRepository
                 break;
             case "Audi":
                 car = new Audi();
+                break;
+            case "Volvo":
+                car = new Volvo();
                 break;
         }
 
