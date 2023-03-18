@@ -2,18 +2,22 @@ namespace NullObjectDesignPattern.Console;
 
 public class Volvo : ICar
 {
+    private const string HelloVolvo = "Hello Volvo!!";
+    private const string VolvoStarted = "Volvo Started!!";
+    private const string VolvoStopped = "Volvo Stopped!!";
+
     public string SayHello()
     {
-        return "Hello Volvo!!";
+        return HelloVolvo;
     }
 
     public string StartCar()
     {
-        return "Volvo Started!!";
+        return VolvoStarted;
     }
 
     public string StopCar()
     {
-        return "Volvo Stopped!!";
+        return VolvoStopped;
     }
 }

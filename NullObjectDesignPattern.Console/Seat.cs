@@ -2,18 +2,22 @@ namespace NullObjectDesignPattern.Console;
 
 public class Seat : ICar
 {
+    private const string HelloSeat = "Hello Seat!!";
+    private const string SeatStarted = "Seat Started!!";
+    private const string SeatStopped = "Seat Stopped!!";
+
     public string SayHello()
     {
-        return "Hello Seat!!";
+        return HelloSeat;
     }
 
     public string StartCar()
     {
-        return "Seat Started!!";
+        return SeatStarted;
     }
 
     public string StopCar()
     {
-        return "Seat Stopped!!";
+        return SeatStopped;
     }
 }
