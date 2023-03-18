@@ -8,14 +8,13 @@ public class CarRepository
 
     public static ICar GetCar(string carName)
     {
-        ICar car = carName switch
-        {
-            Seat => new Seat(),
-            Audi => new Audi(),
-            Volvo => new Volvo(),
-            _ => null
-        };
-
+        ICar car = new NullCar().Instance;
+        if (carName == Seat)
+            car = new Seat();
+        else if (carName == Audi)
+            car = new Audi();
+        else if (carName == Volvo)
+            car = new Volvo();
         return car;
     }
 }
