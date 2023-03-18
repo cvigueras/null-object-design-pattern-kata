@@ -2,9 +2,7 @@
 {
     public class NullCar : ICar
     {
-        private static NullCar? _instance;
-        internal NullCar(){}
-        public NullCar Instance => _instance ?? new NullCar();
+        public NullCar Instance => new NullCar();
 
         public string SayHello()
         {
