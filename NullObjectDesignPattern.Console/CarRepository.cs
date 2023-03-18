@@ -6,9 +6,9 @@ public class CarRepository
     private const string Audi = "Audi";
     private const string Volvo = "Volvo";
 
-    public static ICar GetCar(string carName)
+    public static ICar? GetCar(string carName)
     {
-        ICar car = new NullCar().Instance;
+        ICar? car = new NullCar().Instance;
         if (carName == Seat)
             car = new Seat();
         else if (carName == Audi)

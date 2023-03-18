@@ -5,7 +5,7 @@ namespace NullObjectDesignPattern.Test
 {
     public class CarRepositoryShould
     {
-        private ICar _car;
+        private ICar? _car;
         private const string MarkSeat = "Seat";
         private const string MarkAudi = "Audi";
         private const string MarkVolvo = "Volvo";
