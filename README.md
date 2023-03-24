@@ -1,2 +1,2 @@
 # NullObjectDesignPattern
-Implementation of Null Object Design Pattern example with TDD.
+Implementation of Null Object Design Pattern in C# example with TDD.
